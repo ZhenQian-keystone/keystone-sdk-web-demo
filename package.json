@@ -8,7 +8,7 @@
     "@ethereumjs/tx": "^4.1.2",
     "@ethereumjs/util": "^8.0.6",
     "@keystonehq/animated-qr": "^0.5.2",
-    "@keystonehq/keystone-sdk": "file:.yalc/@keystonehq/keystone-sdk",
+    "@keystonehq/keystone-sdk": "^0.1.2",
     "@solana/web3.js": "^1.75.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",

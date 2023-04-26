@@ -9,35 +9,35 @@ import { Hardfork, Chain, Common } from '@ethereumjs/common';
 
 const common =  new Common({ chain: Chain.Ropsten, hardfork: Hardfork.London });
 
-// const legacyTransaction = () => {
-//     const txParams = {
-//         to: "0x31bA53Ca350975007B27CF43AcB4D9Bc3db2641c",
-//         gasLimit: 200000,
-//         gasPrice: 120000000000,
-//         data: "0x",
-//         nonce: 1,
-//         value: 1200000000000000000n,  // 1.2 ETH
-//     };
-//     const tx = Transaction.fromTxData(txParams, { common: common, freeze: false });
-//     const message = tx.getMessageToSign(false); // generate the unsigned transaction
-//     const serializedMessage = Buffer.from(RLP.encode(bufArrToArr(message))).toString("hex") // use this for the HW wallet input
-//     return serializedMessage;
-// }
+const legacyTransaction = () => {
+    const txParams = {
+        to: "0x31bA53Ca350975007B27CF43AcB4D9Bc3db2641c",
+        gasLimit: 200000,
+        gasPrice: 120000000000,
+        data: "0x",
+        nonce: 1,
+        value: 1200000000000000000n,  // 1.2 ETH
+    };
+    const tx = Transaction.fromTxData(txParams, { common: common, freeze: false });
+    const message = tx.getMessageToSign(false); // generate the unsigned transaction
+    const serializedMessage = Buffer.from(RLP.encode(bufArrToArr(message))).toString("hex") // use this for the HW wallet input
+    return serializedMessage;
+}
 
-// const eip1559Transaction = () => {
-//     const txParams = {
-//         to: "0x31bA53Ca350975007B27CF43AcB4D9Bc3db2641c",
-//         gasLimit: 35552,
-//         maxPriorityFeePerGas: 75853,
-//         maxFeePerGas: 121212,
-//         data: "0x",
-//         nonce: 1,
-//         value: 1200000000000000000n,  // 1.2 ETH
-//     };
-//     const eip1559Tx = FeeMarketEIP1559Transaction.fromTxData(txParams, {common});
-//     const unsignedMessage = Buffer.from(eip1559Tx.getMessageToSign(false)).toString("hex");
-//     return unsignedMessage;
-// }
+const eip1559Transaction = () => {
+    const txParams = {
+        to: "0x31bA53Ca350975007B27CF43AcB4D9Bc3db2641c",
+        gasLimit: 35552,
+        maxPriorityFeePerGas: 75853,
+        maxFeePerGas: 121212,
+        data: "0x",
+        nonce: 1,
+        value: 1200000000000000000n,  // 1.2 ETH
+    };
+    const eip1559Tx = FeeMarketEIP1559Transaction.fromTxData(txParams, {common});
+    const unsignedMessage = Buffer.from(eip1559Tx.getMessageToSign(false)).toString("hex");
+    return unsignedMessage;
+}
 
 const personalMessage = () => {
     return "68656c6c6f" // hex string of the message "hello"

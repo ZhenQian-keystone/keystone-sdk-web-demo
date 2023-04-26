@@ -21,7 +21,6 @@ const getMessage = () => {
     return "68656c6c6f" // hex string of the message "hello"
 }
 
-
 const solSignRequest = {
     requestId: "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d", // uuid.v4()
     signData: getMessage(),

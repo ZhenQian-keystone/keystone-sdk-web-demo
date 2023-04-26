@@ -3,6 +3,8 @@ import {Bitcoin} from "./chains/Bitcoin";
 import {Ethereum} from "./chains/Ethereum";
 import {MultiAccounts} from "./wallet/MultiAccounts";
 import {Solana} from "./chains/Solana";
+import {Cosmos} from "./chains/Cosmos";
+import {Aptos} from "./chains/Aptos";
 
 function App() {
   return (
@@ -11,7 +13,9 @@ function App() {
         {/*<Ethereum />*/}
         {/*  <Bitcoin />*/}
         {/*  <MultiAccounts />*/}
-          <Solana />
+        {/*  <Solana />*/}
+        {/*  <Cosmos />*/}
+          <Aptos />
       </header>
     </div>
   );

@@ -1699,8 +1699,10 @@
     base58check "^2.0.0"
     tslib "^2.3.0"
 
-"@keystonehq/keystone-sdk@file:.yalc/@keystonehq/keystone-sdk":
-  version "0.0.1"
+"@keystonehq/keystone-sdk@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@keystonehq/keystone-sdk/-/keystone-sdk-0.1.2.tgz#d0275b6257d03bcada987408f9d5107ed6ab22f4"
+  integrity sha512-FdvnsSGuamOSc6TWFThJEhuTTnuX1nXLlC9H1Iei4dOS6VwEdCvwkMMXx+cvApRJHehYtvfkzdw9JbxkVv5Plg==
   dependencies:
     "@bufbuild/protobuf" "^1.2.0"
     "@keystonehq/bc-ur-registry" "^0.5.4"
