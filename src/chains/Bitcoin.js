@@ -1,7 +1,6 @@
 import {useState} from "react";
 import KeystoneSDK, {UR, URType} from "@keystonehq/keystone-sdk"
 import {AnimatedQRCode, AnimatedQRScanner} from "@keystonehq/animated-qr"
-import {Box} from "@mui/material";
 
 export const Bitcoin = () => {
     const [isScanning, setIsScanning] = useState(false);

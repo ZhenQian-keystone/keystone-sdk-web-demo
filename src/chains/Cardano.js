@@ -26,15 +26,22 @@ let cardanoSignRequest = {
                 "addr1qyz85693g4fr8c55mfyxhae8j2u04pydxrgqr73vmwpx3azv4dgkyrgylj5yl2m0jlpdpeswyyzjs0vhwvnl6xg9f7ssrxkz90",
         },
     ],
-    certKeys: [],
+    certKeys: [
+        {
+            keyHash: "e557890352095f1cf6fd2b7d1a28e3c3cb029f48cf34ff890a28d176",
+            xfp: "73c5da0a",
+            keyPath: "m/1852'/1815'/0'/2/0",
+        },
+    ],
     origin: "cardano-wallet"
 }
 
 export const Cardano = () => {
     const keystoneSDK = new KeystoneSDK();
-    const ur = keystoneSDK.cardano.generateSignRequest(cardanoSignRequest);
+    return <div>TODO</div>
+    // const ur = keystoneSDK.cardano.generateSignRequest(cardanoSignRequest);
 
-    return <AnimatedQRCode type={ur.type} cbor={ur.cbor.toString("hex")}/>
+    // return <AnimatedQRCode type={ur.type} cbor={ur.cbor.toString("hex")}/>
 }
 
 export const AptosScanner = () => {
