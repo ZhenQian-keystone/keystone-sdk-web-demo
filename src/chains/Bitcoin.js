@@ -1,6 +1,7 @@
 import {useState} from "react";
-import KeystoneSDK, {UR} from "@keystonehq/keystone-sdk"
+import KeystoneSDK, {UR, URType} from "@keystonehq/keystone-sdk"
 import {AnimatedQRCode, AnimatedQRScanner} from "@keystonehq/animated-qr"
+import {Box} from "@mui/material";
 
 export const Bitcoin = () => {
     const [isScanning, setIsScanning] = useState(false);
@@ -25,7 +26,7 @@ export const Bitcoin = () => {
             ? <AnimatedQRScanner
                 handleScan={onSucceed}
                 handleError={onError}
-                urTypes={["crypto-psbt"]}
+                urTypes={[URType.CryptoPSBT]}
                 options={{
                     width: 400,
                     height: 300

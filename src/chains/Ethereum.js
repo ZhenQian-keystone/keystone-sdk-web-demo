@@ -1,5 +1,5 @@
 import {useState} from "react";
-import KeystoneSDK, {KeystoneEthereumSDK, UR} from "@keystonehq/keystone-sdk"
+import KeystoneSDK, {KeystoneEthereumSDK, UR, URType} from "@keystonehq/keystone-sdk"
 import {AnimatedQRCode, AnimatedQRScanner} from "@keystonehq/animated-qr"
 
 import { bufArrToArr } from '@ethereumjs/util'
@@ -89,7 +89,7 @@ export const Ethereum = () => {
             ? <AnimatedQRScanner
                 handleScan={onSucceed}
                 handleError={onError}
-                urTypes={["eth-signature"]}
+                urTypes={[URType.EthSignature]}
                 options={{
                     width: 400,
                     height: 300
@@ -101,7 +101,6 @@ export const Ethereum = () => {
                         type={ur.type}
                         cbor={ur.cbor.toString("hex")}
                         options={{
-                            size: 200,
                             capacity: 200,
                             interval: 300
                         }}
