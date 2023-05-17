@@ -1,4 +1,4 @@
-import KeystoneSDK, {KeystoneSolanaSDK, UR} from "@keystonehq/keystone-sdk";
+import KeystoneSDK, {KeystoneSolanaSDK, UR, URType} from "@keystonehq/keystone-sdk";
 import {AnimatedQRCode, AnimatedQRScanner} from "@keystonehq/animated-qr";
 import { Transaction, PublicKey, LAMPORTS_PER_SOL, SystemProgram, Message } from "@solana/web3.js";
 
@@ -43,6 +43,6 @@ export const Solana = () => {
     //     console.log("error: ",errorMessage);
     // }
     //
-    // return <AnimatedQRScanner handleScan={onSucceed} handleError={onError} urTypes={["sol-signature"]} />
+    // return <AnimatedQRScanner handleScan={onSucceed} handleError={onError} urTypes={URType.SolSignature} />
 
 }

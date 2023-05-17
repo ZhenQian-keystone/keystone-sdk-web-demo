@@ -1,4 +1,4 @@
-import KeystoneSDK, { KeystoneAptosSDK, UR } from "@keystonehq/keystone-sdk"
+import KeystoneSDK, { KeystoneAptosSDK, UR, URType } from "@keystonehq/keystone-sdk"
 import {AnimatedQRCode, AnimatedQRScanner} from "@keystonehq/animated-qr"
 
 let aptosSignRequest = {
@@ -30,5 +30,5 @@ export const AptosScanner = () => {
         console.log("error: ",errorMessage);
     }
 
-    return <AnimatedQRScanner handleScan={onSucceed} handleError={onError} urTypes={["aptos-signature"]} />
+    return <AnimatedQRScanner handleScan={onSucceed} handleError={onError} urTypes={[URType.AptosSignature]} />
 }

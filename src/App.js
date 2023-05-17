@@ -1,11 +1,11 @@
 import './App.css';
 import {Bitcoin} from "./chains/Bitcoin";
 import {Ethereum} from "./chains/Ethereum";
-// import {MultiAccounts} from "./wallet/MultiAccounts";
+import {MultiAccounts} from "./wallet/MultiAccounts";
 import {Solana} from "./chains/Solana";
 import {Cosmos} from "./chains/Cosmos";
 import {Aptos} from "./chains/Aptos";
-// import {KeyDerivationCall} from "./wallet/KeyDerivationCall";
+import {KeyDerivationCall} from "./wallet/KeyDerivationCall";
 import {Box, Tab, Tabs} from "@mui/material";
 import {useState} from "react";
 import {Cardano} from "./chains/Cardano";
@@ -23,7 +23,7 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box flex justifyContent={"space-between"} width={"300px"} height={"300px"}>
+        <Box flex justifyContent={"space-between"} width={"300px"} height={"300px"} mt={6}>
           <Box display={"inline-block"}>
             {children}
           </Box>
@@ -78,18 +78,18 @@ function App() {
         <KeystoneBytes/>
       </TabPanel>
 
-    {/*  <Box sx={{borderBottom: 1, borderColor: 'divider'}}>*/}
-    {/*    <Tabs value={walletAction} onChange={handleWalletActionChange} aria-label="basic tabs example">*/}
-    {/*      <Tab label="Key Call"/>*/}
-    {/*      <Tab label="MultiAccounts"/>*/}
-    {/*    </Tabs>*/}
-    {/*  </Box>*/}
-    {/*  <TabPanel value={walletAction} index={0}>*/}
-    {/*    <KeyDerivationCall />*/}
-    {/*  </TabPanel>*/}
-    {/*  <TabPanel value={walletAction} index={1}>*/}
-    {/*    <MultiAccounts />*/}
-    {/*  </TabPanel>*/}
+      <Box sx={{borderBottom: 1, borderColor: 'divider'}}>
+        <Tabs value={walletAction} onChange={handleWalletActionChange} aria-label="basic tabs example">
+          <Tab label="Key Call"/>
+          <Tab label="MultiAccounts"/>
+        </Tabs>
+      </Box>
+      <TabPanel value={walletAction} index={0}>
+        <KeyDerivationCall />
+      </TabPanel>
+      <TabPanel value={walletAction} index={1}>
+        <MultiAccounts />
+      </TabPanel>
     </div>
   );
 }

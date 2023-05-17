@@ -1,5 +1,5 @@
 import {useState} from "react";
-import KeystoneSDK, {KeystoneCosmosSDK} from "@keystonehq/keystone-sdk"
+import KeystoneSDK, {KeystoneCosmosSDK, URType} from "@keystonehq/keystone-sdk"
 import {AnimatedQRCode} from "@keystonehq/animated-qr"
 
 export const Cosmos = () => {
@@ -19,33 +19,33 @@ export const Cosmos = () => {
 
     return <AnimatedQRCode type={ur.type} cbor={ur.cbor.toString("hex")}/>
 }
-    // const onSucceed = ({type, cbor}) => {
-    //     const psbt = keystoneSDK.btc.parsePSBT(new UR(Buffer.from(cbor, "hex"), type))
-    //     console.log("psbt: ", psbt);
-    //     setIsScanning(false);
-    // }
-    //
-    // const onError = (errorMessage) => {
-    //     console.log("error: ",errorMessage);
-    //     setIsScanning(false);
-    // }
-    //
-    // return (
-    //     isScanning
-    //         ? <AnimatedQRScanner
-    //             handleScan={onSucceed}
-    //             handleError={onError}
-    //             urTypes={["crypto-psbt"]}
-    //             options={{
-    //                 width: 400,
-    //                 height: 300
-    //             }}
-    //         />
-    //         : (
-    //             <>
-    //                 <AnimatedQRCode type={ur.type} cbor={ur.cbor.toString("hex")}/>
-    //                 <button onClick={() => { setIsScanning(true) }}>Scan Keystone</button>
-    //             </>
-    //         )
-    // )
+//     const onSucceed = ({type, cbor}) => {
+//         const psbt = keystoneSDK.btc.parsePSBT(new UR(Buffer.from(cbor, "hex"), type))
+//         console.log("psbt: ", psbt);
+//         setIsScanning(false);
+//     }
+//
+//     const onError = (errorMessage) => {
+//         console.log("error: ",errorMessage);
+//         setIsScanning(false);
+//     }
+//
+//     return (
+//         isScanning
+//             ? <AnimatedQRScanner
+//                 handleScan={onSucceed}
+//                 handleError={onError}
+//                 urTypes={[URType.CosmosSignature]}
+//                 options={{
+//                     width: 400,
+//                     height: 300
+//                 }}
+//             />
+//             : (
+//                 <>
+//                     <AnimatedQRCode type={ur.type} cbor={ur.cbor.toString("hex")}/>
+//                     <button onClick={() => { setIsScanning(true) }}>Scan Keystone</button>
+//                 </>
+//             )
+//     )
 // }

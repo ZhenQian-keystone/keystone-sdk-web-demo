@@ -1742,6 +1742,22 @@
     bs58check "^2.1.2"
     uuid "^8.3.2"
 
+"@keystonehq/bc-ur-registry-arweave@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@keystonehq/bc-ur-registry-arweave/-/bc-ur-registry-arweave-0.4.0.tgz#088c7f1c8c6329dc80391d53c76fa082a90032e9"
+  integrity sha512-PDCYpOOHp1elRQeWutol4n5NE7Briv2K1ho70FrTbU7N7W8CEbUlRlEeb78cq/P0LtIuw6NR6byRrQQ36ZmPhw==
+  dependencies:
+    "@keystonehq/bc-ur-registry" "0.5.4"
+    uuid "^8.3.2"
+
+"@keystonehq/bc-ur-registry-cardano@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@keystonehq/bc-ur-registry-cardano/-/bc-ur-registry-cardano-0.2.0.tgz#6d0ec9c8c52205e64841c07956bed96d26d6e9a0"
+  integrity sha512-yqoDMa1IJ9qhSilk89sEG5wzmu0Na2W1+78dYt1LdfD3AJls7DrfvPT68CMF7z0YjiWxo+LL5G2qaaiHFP9cew==
+  dependencies:
+    "@keystonehq/bc-ur-registry" "^0.5.4"
+    uuid "^8.3.2"
+
 "@keystonehq/bc-ur-registry-cosmos@^0.2.2":
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/@keystonehq/bc-ur-registry-cosmos/-/bc-ur-registry-cosmos-0.2.2.tgz#eb7ac9f5d60b99722386d8242739335512688f4e"
@@ -1778,6 +1794,15 @@
   dependencies:
     "@keystonehq/bc-ur-registry" "0.5.4"
 
+"@keystonehq/bc-ur-registry-near@^0.8.0":
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/@keystonehq/bc-ur-registry-near/-/bc-ur-registry-near-0.8.0.tgz#32e25368d0a4b114e8b42c538e60c768b594fc5a"
+  integrity sha512-xyNTiTeSBqEpjvLlNR3DZKbP6P7+JALa8rgsO7+b9C2kUEdDmTQ6jEquD4V+zMS86AeT+GhGxnAvZWF+jaZMZA==
+  dependencies:
+    "@keystonehq/bc-ur-registry" "0.5.4"
+    bs58check "^2.1.2"
+    uuid "^8.3.2"
+
 "@keystonehq/bc-ur-registry-sol@^0.6.2":
   version "0.6.2"
   resolved "https://registry.yarnpkg.com/@keystonehq/bc-ur-registry-sol/-/bc-ur-registry-sol-0.6.2.tgz#deb01321b79feca343251338730444d282b6d979"
@@ -1786,6 +1811,14 @@
     "@keystonehq/bc-ur-registry" "0.5.4"
     bs58check "^2.1.2"
     uuid "^8.3.2"
+
+"@keystonehq/bc-ur-registry-sui@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@keystonehq/bc-ur-registry-sui/-/bc-ur-registry-sui-0.2.0.tgz#bd98f4e258d2e43138e44251512580de5e99fc5c"
+  integrity sha512-6cSdKq9XH7jvd2mNf/rHNm0BOB1LU2YofuBYILY8J8/17bUEmhxfz6kTIrjLqUwCenIeKeUAFfygV8kUxGpy1g==
+  dependencies:
+    "@keystonehq/bc-ur-registry" "^0.5.5"
+    uuid "^9.0.0"
 
 "@keystonehq/bc-ur-registry-tron@^0.1.0":
   version "0.1.0"
@@ -1813,7 +1846,7 @@
     base58check "^2.0.0"
     tslib "^2.3.0"
 
-"@keystonehq/bc-ur-registry@^0.5.4":
+"@keystonehq/bc-ur-registry@^0.5.4", "@keystonehq/bc-ur-registry@^0.5.5":
   version "0.5.5"
   resolved "https://registry.yarnpkg.com/@keystonehq/bc-ur-registry/-/bc-ur-registry-0.5.5.tgz#b7cd9b08846c627e988933049aac94d3412fbb16"
   integrity sha512-PoclPHf0OhpIKLfLwzymsu+CjkWf5ZKvaVjpkq3HUalcI4KW8wLk0m8qI2kBVv6F0BQ0ERPqW8OfjLTVqIgWLA==
@@ -1822,18 +1855,22 @@
     bs58check "^2.1.2"
     tslib "^2.3.0"
 
-"@keystonehq/keystone-sdk@^0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@keystonehq/keystone-sdk/-/keystone-sdk-0.1.2.tgz#d0275b6257d03bcada987408f9d5107ed6ab22f4"
-  integrity sha512-FdvnsSGuamOSc6TWFThJEhuTTnuX1nXLlC9H1Iei4dOS6VwEdCvwkMMXx+cvApRJHehYtvfkzdw9JbxkVv5Plg==
+"@keystonehq/keystone-sdk@^0.1.3":
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/@keystonehq/keystone-sdk/-/keystone-sdk-0.1.3.tgz#3fb876ae46e82ddc354d604a1e41b5780faee186"
+  integrity sha512-JfzQwjKH8uAFiJxSfJr6GTuVrwqQeYxZJBpLdlgmTiTl86ZPdEtk7mw/CY64tk42o6xCbanMThXB83CkAWNDPA==
   dependencies:
     "@bufbuild/protobuf" "^1.2.0"
-    "@keystonehq/bc-ur-registry" "^0.5.4"
+    "@keystonehq/bc-ur-registry" "^0.5.5"
     "@keystonehq/bc-ur-registry-aptos" "^0.3.2"
+    "@keystonehq/bc-ur-registry-arweave" "^0.4.0"
+    "@keystonehq/bc-ur-registry-cardano" "^0.2.0"
     "@keystonehq/bc-ur-registry-cosmos" "^0.2.2"
     "@keystonehq/bc-ur-registry-eth" "^0.15.2"
     "@keystonehq/bc-ur-registry-keystone" "^0.1.0"
+    "@keystonehq/bc-ur-registry-near" "^0.8.0"
     "@keystonehq/bc-ur-registry-sol" "^0.6.2"
+    "@keystonehq/bc-ur-registry-sui" "^0.2.0"
     "@keystonehq/bc-ur-registry-tron" "^0.1.0"
     "@ngraveio/bc-ur" "^1.1.6"
     bs58check "^3.0.1"

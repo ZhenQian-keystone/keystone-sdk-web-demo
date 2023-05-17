@@ -1,8 +1,8 @@
-import KeystoneSDK, { UR } from "@keystonehq/keystone-sdk"
+import KeystoneSDK, { UR, URType } from "@keystonehq/keystone-sdk"
 import {AnimatedQRCode, AnimatedQRScanner} from "@keystonehq/animated-qr"
 
 let cardanoSignRequest = {
-    uuidString: "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
+    requestId: "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
     signData: Buffer.from("84a400828258204e3a6e7fdcb0d0efa17bf79c13aed2b4cb9baf37fb1aa2e39553d5bd720c5c99038258204e3a6e7fdcb0d0efa17bf79c13aed2b4cb9baf37fb1aa2e39553d5bd720c5c99040182a200581d6179df4c75f7616d7d1fd39cbc1a6ea6b40a0d7b89fea62fc0909b6c370119c350a200581d61c9b0c9761fd1dc0404abd55efc895026628b5035ac623c614fbad0310119c35002198ecb0300a0f5f6", "hex"),
     utxos: [
         {
@@ -38,10 +38,9 @@ let cardanoSignRequest = {
 
 export const Cardano = () => {
     const keystoneSDK = new KeystoneSDK();
-    return <div>TODO</div>
-    // const ur = keystoneSDK.cardano.generateSignRequest(cardanoSignRequest);
+    const ur = keystoneSDK.cardano.generateSignRequest(cardanoSignRequest);
 
-    // return <AnimatedQRCode type={ur.type} cbor={ur.cbor.toString("hex")}/>
+    return <AnimatedQRCode type={ur.type} cbor={ur.cbor.toString("hex")} />
 }
 
 export const AptosScanner = () => {
@@ -55,5 +54,5 @@ export const AptosScanner = () => {
         console.log("error: ",errorMessage);
     }
 
-    return <AnimatedQRScanner handleScan={onSucceed} handleError={onError} urTypes={["aptos-signature"]} />
+    return <AnimatedQRScanner handleScan={onSucceed} handleError={onError} urTypes={[URType.CardanoSignature]} />
 }
