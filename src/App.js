@@ -10,6 +10,7 @@ import {Box, Tab, Tabs} from "@mui/material";
 import {useState} from "react";
 import {Cardano} from "./chains/Cardano";
 import {KeystoneBytes} from "./chains/KeystoneBytes";
+import {Account} from "./wallet/Account";
 
 function TabPanel(props) {
   const {children, value, index, ...other} = props;
@@ -81,6 +82,7 @@ function App() {
       <Box sx={{borderBottom: 1, borderColor: 'divider'}}>
         <Tabs value={walletAction} onChange={handleWalletActionChange} aria-label="basic tabs example">
           <Tab label="Key Call"/>
+          <Tab label="Account"/>
           <Tab label="MultiAccounts"/>
         </Tabs>
       </Box>
@@ -88,6 +90,9 @@ function App() {
         <KeyDerivationCall />
       </TabPanel>
       <TabPanel value={walletAction} index={1}>
+        <Account />
+      </TabPanel>
+      <TabPanel value={walletAction} index={2}>
         <MultiAccounts />
       </TabPanel>
     </div>
