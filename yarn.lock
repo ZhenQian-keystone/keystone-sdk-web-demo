@@ -1820,14 +1820,6 @@
     "@keystonehq/bc-ur-registry" "^0.5.5"
     uuid "^9.0.0"
 
-"@keystonehq/bc-ur-registry-tron@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@keystonehq/bc-ur-registry-tron/-/bc-ur-registry-tron-0.1.0.tgz#74929c202089c44df7d78c6bf2bda087dbb5632f"
-  integrity sha512-6uHu1MAjio/ZYquv98uHSBMIeGJOIVSTJ0Pqyy7AfxcaI02WuN9ooUT6ef/RCfMWThpcE/MvRJ7BEV+cQWd67w==
-  dependencies:
-    "@keystonehq/bc-ur-registry" "0.5.4"
-    uuid "^9.0.0"
-
 "@keystonehq/bc-ur-registry@0.5.4":
   version "0.5.4"
   resolved "https://registry.yarnpkg.com/@keystonehq/bc-ur-registry/-/bc-ur-registry-0.5.4.tgz#5802486a29f5d772520d15579d40fba02860e27f"
@@ -1855,10 +1847,10 @@
     bs58check "^2.1.2"
     tslib "^2.3.0"
 
-"@keystonehq/keystone-sdk@^0.1.4":
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/@keystonehq/keystone-sdk/-/keystone-sdk-0.1.4.tgz#a523d105c74b8a3ff709c06898002c7359abd0dd"
-  integrity sha512-kenuYg/y3TDRN4YGHCkYneQLDGvrYGqXcgROr4lAlBFrC96NAZLATkkeHbwP51l8yDXeeT4cPnDnZSuHoc2b6Q==
+"@keystonehq/keystone-sdk@^0.1.5":
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/@keystonehq/keystone-sdk/-/keystone-sdk-0.1.5.tgz#98c74ae1f1e42794ce89108540c7c3886e14fb40"
+  integrity sha512-BOpeML0W8DnPjWm6TwXO44SiOfxiO3HXQ2iaEI5ziXHKovWxxZb/CIF014o/q7SnrNbVbCCl1lSJmRylwAy6Kg==
   dependencies:
     "@bufbuild/protobuf" "^1.2.0"
     "@keystonehq/bc-ur-registry" "^0.5.5"
@@ -1871,7 +1863,6 @@
     "@keystonehq/bc-ur-registry-near" "^0.8.0"
     "@keystonehq/bc-ur-registry-sol" "^0.6.2"
     "@keystonehq/bc-ur-registry-sui" "^0.2.0"
-    "@keystonehq/bc-ur-registry-tron" "^0.1.0"
     "@ngraveio/bc-ur" "^1.1.6"
     bs58check "^3.0.1"
     pako "^2.1.0"
