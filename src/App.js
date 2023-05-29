@@ -13,6 +13,7 @@ import {KeystoneBytes} from "./chains/KeystoneBytes";
 import {Account} from "./wallet/Account";
 import {Sui} from "./chains/Sui";
 import {Tron} from "./chains/Tron";
+import {Xrp} from "./chains/Xrp";
 
 function TabPanel(props) {
   const {children, value, index, ...other} = props;
@@ -58,6 +59,7 @@ function App() {
           <Tab label="Cardano"/>
           <Tab label="Sui"/>
           <Tab label="Tron"/>
+          <Tab label="XrpScanner"/>
           <Tab label="Keystone"/>
         </Tabs>
       </Box>
@@ -86,6 +88,9 @@ function App() {
         <Tron/>
       </TabPanel>
       <TabPanel value={chain} index={8}>
+        <Xrp/>
+      </TabPanel>
+      <TabPanel value={chain} index={9}>
         <KeystoneBytes/>
       </TabPanel>
 
