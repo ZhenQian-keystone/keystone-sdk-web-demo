@@ -59,7 +59,7 @@ function App() {
           <Tab label="Cardano"/>
           <Tab label="Sui"/>
           <Tab label="Tron"/>
-          <Tab label="XrpScanner"/>
+          <Tab label="Xrp"/>
           <Tab label="Keystone"/>
         </Tabs>
       </Box>
