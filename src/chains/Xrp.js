@@ -31,5 +31,5 @@ export const XrpScanner = () => {
         console.log("error: ",errorMessage);
     }
 
-    return <AnimatedQRScanner handleScan={onSucceed} handleError={onError} urTypes={[URType.XrpAccount]} />
+    return <AnimatedQRScanner handleScan={onSucceed} handleError={onError} urTypes={[URType.XrpSignature]} />
 }

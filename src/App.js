@@ -14,6 +14,11 @@ import {Account} from "./wallet/Account";
 import {Sui} from "./chains/Sui";
 import {Tron} from "./chains/Tron";
 import {Xrp} from "./chains/Xrp";
+import {Near} from "./chains/Near";
+import {Arweave} from "./chains/Arweave";
+import {Litecoin} from "./chains/Litecoin";
+import {DigitalCash} from "./chains/Dash";
+import {BitcoinCash} from "./chains/Bch";
 
 function TabPanel(props) {
   const {children, value, index, ...other} = props;
@@ -50,7 +55,7 @@ function App() {
   return (
     <div className="App">
       <Box sx={{borderBottom: 1, borderColor: 'divider'}}>
-        <Tabs value={chain} onChange={handleChainChange} aria-label="basic tabs example">
+        <Tabs value={chain} onChange={handleChainChange}>
           <Tab label="Bitcoin"/>
           <Tab label="Ethereum"/>
           <Tab label="Solana"/>
@@ -60,7 +65,11 @@ function App() {
           <Tab label="Sui"/>
           <Tab label="Tron"/>
           <Tab label="Xrp"/>
-          <Tab label="Keystone"/>
+          <Tab label="Near"/>
+          <Tab label="Arweave"/>
+          <Tab label="Litecoin"/>
+          <Tab label="Dash"/>
+          <Tab label="Bch"/>
         </Tabs>
       </Box>
       <TabPanel value={chain} index={0}>
@@ -91,7 +100,19 @@ function App() {
         <Xrp/>
       </TabPanel>
       <TabPanel value={chain} index={9}>
-        <KeystoneBytes/>
+        <Near/>
+      </TabPanel>
+      <TabPanel value={chain} index={10}>
+        <Arweave/>
+      </TabPanel>
+      <TabPanel value={chain} index={11}>
+        <Litecoin/>
+      </TabPanel>
+      <TabPanel value={chain} index={12}>
+        <DigitalCash/>
+      </TabPanel>
+      <TabPanel value={chain} index={13}>
+        <BitcoinCash/>
       </TabPanel>
 
       <Box sx={{borderBottom: 1, borderColor: 'divider'}}>
@@ -99,6 +120,7 @@ function App() {
           <Tab label="Key Call"/>
           <Tab label="Account"/>
           <Tab label="MultiAccounts"/>
+          <Tab label="Keystone"/>
         </Tabs>
       </Box>
       <TabPanel value={walletAction} index={0}>
@@ -109,6 +131,9 @@ function App() {
       </TabPanel>
       <TabPanel value={walletAction} index={2}>
         <MultiAccounts />
+      </TabPanel>
+      <TabPanel value={chain} index={3}>
+        <KeystoneBytes/>
       </TabPanel>
     </div>
   );
