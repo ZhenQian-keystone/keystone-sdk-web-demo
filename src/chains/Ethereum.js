@@ -7,7 +7,7 @@ import { RLP } from '@ethereumjs/rlp'
 import { Transaction, FeeMarketEIP1559Transaction } from '@ethereumjs/tx';
 import { Hardfork, Chain, Common } from '@ethereumjs/common';
 
-const common =  new Common({ chain: Chain.Ropsten, hardfork: Hardfork.London });
+const common =  new Common({ chain: Chain.Mainnet, hardfork: Hardfork.London });
 
 const legacyTransaction = () => {
     const txParams = {
@@ -63,8 +63,8 @@ export const Ethereum = () => {
     const keystoneSDK = new KeystoneSDK();
     const ethSignRequest = {
         requestId: "6c3633c0-02c0-4313-9cd7-e25f4f296729",
-        signData: typedData(),
-        dataType: KeystoneEthereumSDK.DataType.typedData,
+        signData: eip1559Transaction(),
+        dataType: KeystoneEthereumSDK.DataType.typedTransaction,
         path: "m/44'/60'/0'/0/0",
         xfp: "F23F9FD2",
         chainId: 1,
