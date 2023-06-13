@@ -32,7 +32,7 @@ export const MultiAccounts = () => {
             handleScan={onSucceed}
             handleError={onError}
             urTypes={[URType.CryptoMultiAccounts]}
-            // onProgress={onProgress}
+            onProgress={onProgress}
             videoLoaded={onCameraStatus}
         />
     )

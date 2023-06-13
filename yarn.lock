@@ -1722,10 +1722,10 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
-"@keystonehq/animated-qr@^0.6.2":
-  version "0.8.2"
-  resolved "https://registry.yarnpkg.com/@keystonehq/animated-qr/-/animated-qr-0.8.2.tgz#47bd5577d3950026fa6dc02c0c4af79f55985d28"
-  integrity sha512-5hba+6mCWa1md8l/TadGG8qAAVgWKQ/qKASLwHFVNz4YPQAhJiBNw6WgdgFhKtxJ+vC04e6jHH3H/8ffBtqZGQ==
+"@keystonehq/animated-qr@^0.8.3":
+  version "0.8.3"
+  resolved "https://registry.yarnpkg.com/@keystonehq/animated-qr/-/animated-qr-0.8.3.tgz#1780d9a66a62f6b63cea91a84085e498778311b2"
+  integrity sha512-1IYrik8s/5H+kb23BCh0moUFdIk+cQwp5btPfj0WeGqVzKs9XNtpL7OT3yPI5B5HOaU4dJG3UGJUSHwfGWDrww==
   dependencies:
     "@keystonehq/ur-decoder" "^0.12.2"
     "@ngraveio/bc-ur" "^1.1.6"
