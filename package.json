@@ -10,7 +10,7 @@
     "@ethereumjs/tx": "^4.1.2",
     "@ethereumjs/util": "^8.0.6",
     "@keystonehq/animated-qr": "^0.8.3",
-    "@keystonehq/keystone-sdk": "^0.2.0",
+    "@keystonehq/keystone-sdk": "^0.2.4",
     "@mui/material": "^5.12.3",
     "@solana/web3.js": "^1.75.0",
     "@testing-library/jest-dom": "^5.16.5",

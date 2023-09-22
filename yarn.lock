@@ -1750,10 +1750,10 @@
     "@keystonehq/bc-ur-registry" "0.5.4"
     uuid "^8.3.2"
 
-"@keystonehq/bc-ur-registry-cardano@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@keystonehq/bc-ur-registry-cardano/-/bc-ur-registry-cardano-0.2.0.tgz#6d0ec9c8c52205e64841c07956bed96d26d6e9a0"
-  integrity sha512-yqoDMa1IJ9qhSilk89sEG5wzmu0Na2W1+78dYt1LdfD3AJls7DrfvPT68CMF7z0YjiWxo+LL5G2qaaiHFP9cew==
+"@keystonehq/bc-ur-registry-cardano@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@keystonehq/bc-ur-registry-cardano/-/bc-ur-registry-cardano-0.3.0.tgz#d6708bcc79737a9c756f2606968abc3353916522"
+  integrity sha512-ADYdGbm11frWD+qPlnFa9JPJ+eTQvapIVxg3QbCHGY32xmTTZsX63yWyTi4zSCXCluGqfcjHViyWZlqQvvB7KA==
   dependencies:
     "@keystonehq/bc-ur-registry" "^0.5.4"
     uuid "^8.3.2"
@@ -1786,6 +1786,15 @@
     ethereumjs-util "^7.0.8"
     hdkey "^2.0.1"
     uuid "^8.3.2"
+
+"@keystonehq/bc-ur-registry-evm@^0.5.2":
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/@keystonehq/bc-ur-registry-evm/-/bc-ur-registry-evm-0.5.2.tgz#166fa0458345ae4b56761a0f8ee014106b093032"
+  integrity sha512-/ns1cDUz3F0KryYA8AVk4xUV6w7wXTS7aDBsowcUeFSp1olsMLSeA/wkNlUgu5DELuJn5FDd6xrsrx4CGcehEQ==
+  dependencies:
+    "@keystonehq/bc-ur-registry" "^0.5.4"
+    bs58check "^2.1.2"
+    uuid "^9.0.0"
 
 "@keystonehq/bc-ur-registry-keystone@^0.1.0":
   version "0.1.0"
@@ -1856,18 +1865,19 @@
     bs58check "^2.1.2"
     tslib "^2.3.0"
 
-"@keystonehq/keystone-sdk@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@keystonehq/keystone-sdk/-/keystone-sdk-0.2.0.tgz#59747063092cfd5268715110937a7fe92f5a8ffc"
-  integrity sha512-Kw35V0m78bx5c6cUMIAhdOaVOVjOyrFKH/y88133yzuJ3uprBiwrqPnrY7fvVkYevDd3PwcL2x7RMkvvXiI4iw==
+"@keystonehq/keystone-sdk@^0.2.4":
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/@keystonehq/keystone-sdk/-/keystone-sdk-0.2.4.tgz#26890883d50533ab15204fab5d2e2a66e6f0b21a"
+  integrity sha512-NrViJFf5v1Ze/FpCNxqeAFmm6G+AkdT4WEF6ALWW8hwXCIfn9VdFwA1sJ2irhBpkZ/Y7u5tbaj1nHM+YfC60bA==
   dependencies:
     "@bufbuild/protobuf" "^1.2.0"
     "@keystonehq/bc-ur-registry" "^0.6.3"
     "@keystonehq/bc-ur-registry-aptos" "^0.3.2"
     "@keystonehq/bc-ur-registry-arweave" "^0.4.0"
-    "@keystonehq/bc-ur-registry-cardano" "^0.2.0"
+    "@keystonehq/bc-ur-registry-cardano" "^0.3.0"
     "@keystonehq/bc-ur-registry-cosmos" "^0.2.2"
     "@keystonehq/bc-ur-registry-eth" "^0.15.2"
+    "@keystonehq/bc-ur-registry-evm" "^0.5.2"
     "@keystonehq/bc-ur-registry-keystone" "^0.1.0"
     "@keystonehq/bc-ur-registry-near" "^0.8.0"
     "@keystonehq/bc-ur-registry-sol" "^0.6.2"
