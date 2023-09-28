@@ -4,7 +4,7 @@ import {AnimatedQRScanner} from "@keystonehq/animated-qr"
 export const MultiAccounts = () => {
 
     const onSucceed = ({type, cbor}) => {
-        const multiAccounts = KeystoneSDK.parseMultiAccounts(new UR(Buffer.from(cbor, "hex"), type))
+        const multiAccounts = new KeystoneSDK().parseMultiAccounts(new UR(Buffer.from(cbor, "hex"), type))
         console.log("multiAccounts: ", multiAccounts);
     }
     const onError = (errorMessage) => {

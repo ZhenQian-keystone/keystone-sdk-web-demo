@@ -1722,10 +1722,10 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
-"@keystonehq/animated-qr@^0.8.3":
-  version "0.8.3"
-  resolved "https://registry.yarnpkg.com/@keystonehq/animated-qr/-/animated-qr-0.8.3.tgz#1780d9a66a62f6b63cea91a84085e498778311b2"
-  integrity sha512-1IYrik8s/5H+kb23BCh0moUFdIk+cQwp5btPfj0WeGqVzKs9XNtpL7OT3yPI5B5HOaU4dJG3UGJUSHwfGWDrww==
+"@keystonehq/animated-qr@^0.8.6":
+  version "0.8.6"
+  resolved "https://registry.yarnpkg.com/@keystonehq/animated-qr/-/animated-qr-0.8.6.tgz#dab0621c7614bef66cf4c640deb66a0d6b18f5af"
+  integrity sha512-qDJ79ckxi8J27hRncS5KaCe9OQJ8ZUMSOjQrPt8V5ZOEEeeAzsmKFa8eytW9Cq2j7VQhWrdEYlDmWqcfYc/2lg==
   dependencies:
     "@keystonehq/ur-decoder" "^0.12.2"
     "@ngraveio/bc-ur" "^1.1.6"
@@ -1856,22 +1856,22 @@
     bs58check "^2.1.2"
     tslib "^2.3.0"
 
-"@keystonehq/bc-ur-registry@^0.6.3":
-  version "0.6.3"
-  resolved "https://registry.yarnpkg.com/@keystonehq/bc-ur-registry/-/bc-ur-registry-0.6.3.tgz#b9f6f958ed5ef19a78d16fea335aae235ca16ae5"
-  integrity sha512-xwOYrRgqfV5wANpHjmO1ilB2bloY2kMxf8xiZ4CG0U5Zkfwa/9wUaqN60xFaG862w/6wnMOHvLDxDm47xNSDlw==
+"@keystonehq/bc-ur-registry@^0.6.4":
+  version "0.6.4"
+  resolved "https://registry.yarnpkg.com/@keystonehq/bc-ur-registry/-/bc-ur-registry-0.6.4.tgz#9c57ff9687cafdc0d2bbd04dc36676d3a38c1485"
+  integrity sha512-j8Uy44DuAkvYkbf0jMxRY3UizJfn8wsEQr7GS3miRF44vcq7k0/yemVkftbn3jQ+0JYaUXf5wY7lVpLhAeW5nQ==
   dependencies:
     "@ngraveio/bc-ur" "^1.1.5"
     bs58check "^2.1.2"
     tslib "^2.3.0"
 
-"@keystonehq/keystone-sdk@^0.2.4":
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/@keystonehq/keystone-sdk/-/keystone-sdk-0.2.4.tgz#26890883d50533ab15204fab5d2e2a66e6f0b21a"
-  integrity sha512-NrViJFf5v1Ze/FpCNxqeAFmm6G+AkdT4WEF6ALWW8hwXCIfn9VdFwA1sJ2irhBpkZ/Y7u5tbaj1nHM+YfC60bA==
+"@keystonehq/keystone-sdk@^0.2.5":
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/@keystonehq/keystone-sdk/-/keystone-sdk-0.2.5.tgz#c03dfce04b85f91421f626cf338abdf868ad50f0"
+  integrity sha512-i2kytzpJQlWAJqc+Pn0qBi3zC75Gm4Mv60sIFQsXfdt06NpnAsHn0BA+l9xV4Xk2VmIz09933hCrLYmgIO6odQ==
   dependencies:
     "@bufbuild/protobuf" "^1.2.0"
-    "@keystonehq/bc-ur-registry" "^0.6.3"
+    "@keystonehq/bc-ur-registry" "^0.6.4"
     "@keystonehq/bc-ur-registry-aptos" "^0.3.2"
     "@keystonehq/bc-ur-registry-arweave" "^0.4.0"
     "@keystonehq/bc-ur-registry-cardano" "^0.3.0"
