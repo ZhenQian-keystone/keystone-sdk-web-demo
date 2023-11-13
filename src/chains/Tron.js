@@ -1,3 +1,4 @@
+import React, {useState} from "react"
 import KeystoneSDK, {UR, URType} from "@keystonehq/keystone-sdk"
 import {AnimatedQRCode, AnimatedQRScanner} from "@keystonehq/animated-qr"
 
@@ -16,14 +17,22 @@ let tronSignRequest = {
 export const Tron = () => {
     const keystoneSDK = new KeystoneSDK();
     const ur = keystoneSDK.tron.generateSignRequest(tronSignRequest);
+    const [isScan, setIsScan] = useState(false);
 
-    return <AnimatedQRCode type={ur.type} cbor={ur.cbor.toString("hex")}/>
+    return <>
+        <AnimatedQRCode type={ur.type} cbor={ur.cbor.toString("hex")}/>
+        <button onClick={() => {
+            setIsScan(!isScan);
+        }}>Scan Keystone</button>
+        {isScan && <TronScanner />}
+    </>
 }
 
 export const TronScanner = () => {
     const keystoneSDK = new KeystoneSDK();
 
     const onSucceed = ({type, cbor}) => {
+        console.log(type, cbor)
         const signature = keystoneSDK.tron.parseSignature(new UR(Buffer.from(cbor, "hex"), type))
         console.log("signature: ", signature);
     }
@@ -31,5 +40,9 @@ export const TronScanner = () => {
         console.log("error: ",errorMessage);
     }
 
-    return <AnimatedQRScanner handleScan={onSucceed} handleError={onError} urTypes={[URType.TronSignature]} />
+    return <AnimatedQRScanner handleScan={onSucceed} handleError={onError} urTypes={[URType.TronSignature]} options={{
+        width: 170,
+        height: 100,
+        blur: false
+    }} />
 }
