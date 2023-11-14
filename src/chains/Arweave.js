@@ -14,18 +14,14 @@ export const Arweave = () => {
     const keystoneSDK = new KeystoneSDK();
     const ur = keystoneSDK.arweave.generateSignRequest(arweaveTransaction);
 
-    return <div style={{zIndex: 10000, background: "white", position: "fixed", width: "100%", paddingLeft: 200}}><AnimatedQRCode type={ur.type} cbor={ur.cbor.toString("hex")} options={{size: 600}}/></div>
+    return <AnimatedQRCode type={ur.type} cbor={ur.cbor.toString("hex")}/>;
 }
 
 export const ArweaveScanner = () => {
     const keystoneSDK = new KeystoneSDK();
 
     const onSucceed = ({cbor, type}) => {
-
-        console.log("=====================");
-        console.log(cbor);
-        console.log("=====================");
-
+        console.log(type, cbor);
         const signature = keystoneSDK.arweave.parseAccount(new UR(Buffer.from(cbor, "hex"), type))
         console.log("signature: ", signature);
     }
