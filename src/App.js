@@ -19,6 +19,7 @@ import {Arweave} from "./chains/Arweave";
 import {Litecoin} from "./chains/Litecoin";
 import {DigitalCash} from "./chains/Dash";
 import {BitcoinCash} from "./chains/Bch";
+import { HDKey } from './wallet/HDKey';
 
 function TabPanel(props) {
   const {children, value, index, ...other} = props;
@@ -119,6 +120,7 @@ function App() {
         <Tabs value={walletAction} onChange={handleWalletActionChange} aria-label="basic tabs example">
           <Tab label="Key Call"/>
           <Tab label="Account"/>
+          <Tab label="HDKey"/>
           <Tab label="MultiAccounts"/>
           <Tab label="Keystone"/>
         </Tabs>
@@ -130,9 +132,12 @@ function App() {
         <Account />
       </TabPanel>
       <TabPanel value={walletAction} index={2}>
+        <HDKey />
+      </TabPanel>
+      <TabPanel value={walletAction} index={3}>
         <MultiAccounts />
       </TabPanel>
-      <TabPanel value={chain} index={3}>
+      <TabPanel value={chain} index={4}>
         <KeystoneBytes/>
       </TabPanel>
     </div>
