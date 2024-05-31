@@ -10,12 +10,27 @@ let stellarTransaction = {
     origin: 'xbull wallet'
 }
 
+let stellarTransactionHash = {
+    requestId: "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
+    signData: "e3bff0cb003cf867acfd117fb514dfaf7a8dd5dddf6e68cc71f553de5046ae2b",
+    dataType: KeystoneStellarSDK.DataType.TransactionHash,
+    path: "m/44'/148'/0'",
+    xfp: "1250B6BC",
+    origin: 'xbull wallet'
+}
+
 export const Stellar = () => {
     const keystoneSDK = new KeystoneSDK();
     const ur = keystoneSDK.stellar.generateSignRequest(stellarTransaction);
 
     return <>
-        <AnimatedQRCode type={ur.type} cbor={ur.cbor.toString("hex")} />
+        <AnimatedQRCode
+            type={ur.type}
+            cbor={ur.cbor.toString("hex")}
+            options={{
+                capacity: 200,
+            }}
+        />
         <StellarScanner />
     </>;
 }
