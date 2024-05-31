@@ -19,6 +19,7 @@ import {Arweave} from "./chains/Arweave";
 import {Litecoin} from "./chains/Litecoin";
 import {DigitalCash} from "./chains/Dash";
 import {BitcoinCash} from "./chains/Bch";
+import {Stellar} from "./chains/Stellar";
 import { HDKey } from './wallet/HDKey';
 
 function TabPanel(props) {
@@ -71,6 +72,7 @@ function App() {
           <Tab label="Litecoin"/>
           <Tab label="Dash"/>
           <Tab label="Bch"/>
+          <Tab label="Stellar"/>
         </Tabs>
       </Box>
       <TabPanel value={chain} index={0}>
@@ -114,6 +116,9 @@ function App() {
       </TabPanel>
       <TabPanel value={chain} index={13}>
         <BitcoinCash/>
+      </TabPanel>
+      <TabPanel value={chain} index={14}>
+        <Stellar/>
       </TabPanel>
 
       <Box sx={{borderBottom: 1, borderColor: 'divider'}}>
