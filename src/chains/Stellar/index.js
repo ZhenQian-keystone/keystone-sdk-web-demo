@@ -22,6 +22,7 @@ let stellarTransactionHash = {
 export const Stellar = () => {
     const keystoneSDK = new KeystoneSDK();
     const ur = keystoneSDK.stellar.generateSignRequest(stellarTransaction);
+    // const ur = keystoneSDK.stellar.generateSignRequest(stellarTransactionHash);
 
     return <>
         <AnimatedQRCode
@@ -38,10 +39,11 @@ export const Stellar = () => {
 export const StellarScanner = () => {
     const keystoneSDK = new KeystoneSDK();
 
-    const onSucceed = ({ cbor, type }) => {
-        console.log(type, cbor);
-        const signature = keystoneSDK.stellar.parseAccount(new UR(Buffer.from(cbor, "hex"), type))
-        console.log("signature: ", signature);
+    const onSucceed = (ur) => {
+        const { cbor } = ur;
+        ur.cbor = Buffer.from(cbor, "hex");
+        const signatureResponse = keystoneSDK.stellar.parseSignature(ur)
+        console.log("signatureResponse: ", signatureResponse.requestId, signatureResponse.signature);
     }
     const onError = (errorMessage) => {
         console.log("error: ", errorMessage);
