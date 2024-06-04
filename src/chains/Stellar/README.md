@@ -30,6 +30,58 @@ import { AnimatedQRCode, AnimatedQRScanner } from "@keystonehq/animated-qr";
 
 ## Usage
 
+### Connect Multiple Accounts
+
+To enable the scanning of QR codes that contain multiple account details, you can use the AnimatedQRScanner component. Below is an example component that manages the scanning process, handles errors, and logs the multi-accounts data retrieved from the QR code.
+
+```javascript
+export const MultiAccounts = () => {
+    // Initialize Keystone SDK
+    const keystoneSDK = new KeystoneSDK();
+
+    // Success handler: Decodes and logs the multi-account data
+    const onSucceed = ({ type, cbor }) => {
+        const multiAccounts = keystoneSDK.parseMultiAccounts(new UR(Buffer.from(cbor, "hex"), type));
+        console.log("MultiAccounts: ", multiAccounts);
+    };
+
+    // Error handler: Logs any errors that occur during the scanning process
+    const onError = (errorMessage) => {
+        console.log("Error: ", errorMessage);
+    };
+
+    // Camera status handler: Provides feedback on the camera's availability and permission status
+    const onCameraStatus = (isCameraReady, error) => {
+        if (!isCameraReady) {
+            if (error === "NO_WEBCAM_FOUND") {
+                console.log("No webcam found");
+            } else if (error === "NO_WEBCAM_ACCESS") {
+                console.log("No webcam permission");
+            }
+        } else {
+            console.log("Camera ready");
+        }
+    };
+
+    // Progress handler: Logs the scanning progress
+    const onProgress = (progress) => {
+        console.log("Scan progress: ", progress);
+    };
+
+    return (
+        <AnimatedQRScanner
+            handleScan={onSucceed}
+            handleError={onError}
+            urTypes={[URType.CryptoMultiAccounts]}
+            onProgress={onProgress}
+            videoLoaded={onCameraStatus}
+        />
+    );
+};
+```
+
+To integrate the MultiAccounts component into your application, simply include it in the relevant part of your user interface. Ensure that the user has guidance on positioning the QR code within the camera frame and information on the scanning progress.
+
 ### Generating QR Codes for Stellar Transactions
 
 Define the transaction details. signData should be the transaction data that needs to be signed:
