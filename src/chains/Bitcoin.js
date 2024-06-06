@@ -3,7 +3,7 @@ import KeystoneSDK, { UR, URType } from '@keystonehq/keystone-sdk'
 import { AnimatedQRCode, AnimatedQRScanner } from '@keystonehq/animated-qr'
 import { networks, payments, Psbt } from 'bitcoinjs-lib'
 
-const generate_legacy_p2pkh_psbt_tx = () => {
+const generate_legacy_p2pkh_psbt_tx = (masterFingerprint) => {
 	// path is "m/44'/0'/0'";
 	// userA send 0.001 BTC to userB
 	const psbt = new Psbt()
@@ -30,7 +30,7 @@ const generate_legacy_p2pkh_psbt_tx = () => {
 		},
 		bip32Derivation: [
 			{
-				masterFingerprint: Buffer.from('1250b6bc', 'hex'), // The master fingerprint
+				masterFingerprint: Buffer.from(masterFingerprint, 'hex'), // The master fingerprint
 				pubkey: Buffer.from(
 					'0341d94247fabfc265035f0a51bcfaca3b65709a7876698769a336b4142faa4bad',
 					'hex'
@@ -83,7 +83,7 @@ const generatePSBT = () => {
 		},
 		bip32Derivation: [
 			{
-				masterFingerprint: Buffer.from('1250b6bc', 'hex'), // The master fingerprint
+				masterFingerprint: Buffer.from('d5950b24', 'hex'), // The master fingerprint
 				pubkey: Buffer.from(
 					'0341d94247fabfc265035f0a51bcfaca3b65709a7876698769a336b4142faa4bad',
 					'hex'
@@ -132,7 +132,25 @@ const extractTransaction = (psbtHex) => {
 export const Bitcoin = () => {
 	const [isScanning, setIsScanning] = useState(false)
 	const [signature, setSignature] = useState('')
-	const psbtHex = generate_legacy_p2pkh_psbt_tx()
+
+	const [masterFingerprint, setMasterFingerprint] = useState('d5950b24')
+	// input master fainger print component
+	const inputMasterFingerprint = () => {
+		return (
+			<div>
+				<label>Set your Master Fingerprint: </label>
+				<input
+					type="text"
+					value={masterFingerprint}
+					onChange={(e) => {
+						setMasterFingerprint(e.target.value.trim())
+					}}
+				/>
+			</div>
+		)
+	}
+
+	const psbtHex = generate_legacy_p2pkh_psbt_tx(masterFingerprint)
 	console.log('psbtHex: ', psbtHex)
 	const keystoneSDK = new KeystoneSDK()
 	const ur = keystoneSDK.btc.generatePSBT(Buffer.from(psbtHex, 'hex'))
@@ -165,6 +183,7 @@ export const Bitcoin = () => {
 		/>
 	) : (
 		<>
+			{inputMasterFingerprint()}
 			<p> simple transfer psbt </p>
 			<AnimatedQRCode type={ur.type} cbor={ur.cbor.toString('hex')} />
 			<button

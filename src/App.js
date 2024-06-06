@@ -67,32 +67,32 @@ function App() {
 				<Cosmos />
 			</TabPanel>
 
-			{/* <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+			<Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
 				<Tabs
 					value={walletAction}
 					onChange={handleWalletActionChange}
 					aria-label="basic tabs example"
 				>
-					<Tab label="Key Call" />
-					<Tab label="Account" />
-					<Tab label="HDKey" />
-					<Tab label="MultiAccounts" />
-					<Tab label="Keystone" />
+					{/* <Tab label="Key Call" />
+					<Tab label="Account" /> */}
+					<Tab label="HDKey(get account from static qrcode )" />
+					<Tab label="MultiAccounts (get multi account from dynamic qrcode " />
+					{/* <Tab label="Keystone" /> */}
 				</Tabs>
 			</Box>
-			<TabPanel value={walletAction} index={0}>
+			{/* <TabPanel value={walletAction} index={0}>
 				<KeyDerivationCall />
-			</TabPanel>
-			<TabPanel value={walletAction} index={1}>
+			</TabPanel> */}
+			{/* <TabPanel value={walletAction} index={1}>
 				<Account />
-			</TabPanel>
-			<TabPanel value={walletAction} index={2}>
+			</TabPanel> */}
+			<TabPanel value={walletAction} index={0}>
 				<HDKey />
 			</TabPanel>
-			<TabPanel value={walletAction} index={3}>
+			<TabPanel value={walletAction} index={1}>
 				<MultiAccounts />
 			</TabPanel>
-			<TabPanel value={chain} index={4}>
+			{/* <TabPanel value={chain} index={4}>
 				<KeystoneBytes />
 			</TabPanel> */}
 		</div>

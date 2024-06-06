@@ -9,6 +9,23 @@ import { AnimatedQRCode, AnimatedQRScanner } from '@keystonehq/animated-qr'
 export const Cosmos = () => {
 	const [isScanning, setIsScanning] = useState(false)
 	const [signature, setSignature] = useState('')
+	const [masterFingerprint, setMasterFingerprint] = useState('d5950b24')
+	// input master fainger print component
+	const inputMasterFingerprint = () => {
+		return (
+			<div>
+				<label>Set your Master Fingerprint: </label>
+				<input
+					type="text"
+					value={masterFingerprint}
+					onChange={(e) => {
+						setMasterFingerprint(e.target.value.trim())
+					}}
+				/>
+			</div>
+		)
+	}
+
 	let cosmosSignRequest = {
 		requestId: '7AFD5E09-9267-43FB-A02E-08C4A09417EC',
 		signData:
@@ -17,7 +34,7 @@ export const Cosmos = () => {
 		accounts: [
 			{
 				path: "m/44'/118'/0'/0/0",
-				xfp: '1250b6bc',
+				xfp: masterFingerprint,
 				address: '4c2a59190413dff36aba8e6ac130c7a691cfb79f',
 			},
 		],
@@ -53,6 +70,7 @@ export const Cosmos = () => {
 		/>
 	) : (
 		<>
+			{inputMasterFingerprint()}
 			<AnimatedQRCode type={ur.type} cbor={ur.cbor.toString('hex')} />
 			<button
 				onClick={() => {

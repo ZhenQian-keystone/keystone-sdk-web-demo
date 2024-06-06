@@ -91,13 +91,13 @@ const typedData = () => {
 	return Buffer.from(JSON.stringify(data), 'utf-8')
 }
 
-const getTxBytype = (typeName) => {
+const getTxBytype = (typeName, masterFingerprint) => {
 	const typed_data_sign_request = {
 		requestId: '6c3633c0-02c0-4313-9cd7-e25f4f296729',
 		signData: typedData(),
 		dataType: KeystoneEthereumSDK.DataType.typedData,
 		path: "m/44'/60'/0'/0/0",
-		xfp: '1250b6bc', // set the wallet fingerprint
+		xfp: masterFingerprint,
 		chainId: 1,
 		origin: 'THORWallet',
 	}
@@ -107,8 +107,7 @@ const getTxBytype = (typeName) => {
 		signData: eip1559Transaction(),
 		dataType: KeystoneEthereumSDK.DataType.typedTransaction,
 		path: "m/44'/60'/0'/0/0",
-		xfp: '1250b6bc', // set the wallet fingerprint
-		chainId: 1,
+		xfp: masterFingerprint,
 		origin: 'THORWallet',
 	}
 
@@ -117,7 +116,7 @@ const getTxBytype = (typeName) => {
 		signData: legacyTransaction(),
 		dataType: KeystoneEthereumSDK.DataType.transaction,
 		path: "m/44'/60'/0'/0/0",
-		xfp: '1250b6bc', // set the wallet fingerprint
+		xfp: masterFingerprint,
 		chainId: 1,
 		origin: 'THORWallet',
 	}
@@ -127,7 +126,7 @@ const getTxBytype = (typeName) => {
 		signData: personalMessage(),
 		dataType: KeystoneEthereumSDK.DataType.personalMessage,
 		path: "m/44'/60'/0'/0/0",
-		xfp: '1250b6bc', // set the wallet fingerprint
+		xfp: masterFingerprint,
 		chainId: 1,
 		origin: 'THORWallet',
 	}
@@ -194,7 +193,9 @@ export const Ethereum = () => {
 	const [type, setType] = useState('typedData')
 	const types = ['typedData', 'eip1559', 'legacy', 'personal']
 
-	const ethSignRequest = getTxBytype(type)
+	const [masterFingerprint, setMasterFingerprint] = useState('d5950b24')
+
+	const ethSignRequest = getTxBytype(type, masterFingerprint)
 
 	const keystoneSDK = new KeystoneSDK()
 
@@ -210,6 +211,22 @@ export const Ethereum = () => {
 		setIsScanning(false)
 	}
 
+	// input master fainger print component
+	const inputMasterFingerprint = () => {
+		return (
+			<div>
+				<label>Set your Master Fingerprint: </label>
+				<input
+					type="text"
+					value={masterFingerprint}
+					onChange={(e) => {
+						setMasterFingerprint(e.target.value.trim())
+					}}
+				/>
+			</div>
+		)
+	}
+
 	const onError = (errorMessage) => {
 		console.log('error: ', errorMessage)
 		setIsScanning(false)
@@ -217,6 +234,7 @@ export const Ethereum = () => {
 
 	return (
 		<>
+			{inputMasterFingerprint()}
 			<div style={{ display: 'flex', alignItems: 'center' }}>
 				<label style={{ marginRight: '1em' }}>
 					{' '}
