@@ -1,4 +1,4 @@
-## Quick Start Guide
+## Integrate with Keystone Wallet Tool
 
 just clone this repo and run the following command in the terminal
 
