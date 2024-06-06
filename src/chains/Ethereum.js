@@ -5,7 +5,6 @@ import KeystoneSDK, {
 	URType,
 } from '@keystonehq/keystone-sdk'
 import { AnimatedQRCode, AnimatedQRScanner } from '@keystonehq/animated-qr'
-
 import { bufArrToArr } from '@ethereumjs/util'
 import { RLP } from '@ethereumjs/rlp'
 import { Transaction, FeeMarketEIP1559Transaction } from '@ethereumjs/tx'
@@ -187,15 +186,13 @@ const qrCodeComponent = (
 	)
 }
 
-export const Ethereum = () => {
+export const Ethereum = ({ masterFingerPrint }) => {
 	const [isScanning, setIsScanning] = useState(false)
 	const [signature, setSignature] = useState('')
 	const [type, setType] = useState('typedData')
 	const types = ['typedData', 'eip1559', 'legacy', 'personal']
 
-	const [masterFingerprint, setMasterFingerprint] = useState('d5950b24')
-
-	const ethSignRequest = getTxBytype(type, masterFingerprint)
+	const ethSignRequest = getTxBytype(type, masterFingerPrint)
 
 	const keystoneSDK = new KeystoneSDK()
 
@@ -210,23 +207,6 @@ export const Ethereum = () => {
 		setSignature(signature)
 		setIsScanning(false)
 	}
-
-	// input master fainger print component
-	const inputMasterFingerprint = () => {
-		return (
-			<div>
-				<label>Set your Master Fingerprint: </label>
-				<input
-					type="text"
-					value={masterFingerprint}
-					onChange={(e) => {
-						setMasterFingerprint(e.target.value.trim())
-					}}
-				/>
-			</div>
-		)
-	}
-
 	const onError = (errorMessage) => {
 		console.log('error: ', errorMessage)
 		setIsScanning(false)
@@ -234,12 +214,7 @@ export const Ethereum = () => {
 
 	return (
 		<>
-			{inputMasterFingerprint()}
 			<div style={{ display: 'flex', alignItems: 'center' }}>
-				<label style={{ marginRight: '1em' }}>
-					{' '}
-					Select the type of transaction to sign{' '}
-				</label>
 				<select
 					value={type}
 					onChange={(e) => {

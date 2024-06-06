@@ -2,7 +2,7 @@ import KeystoneSDK, { UR, URType } from '@keystonehq/keystone-sdk'
 import { AnimatedQRScanner } from '@keystonehq/animated-qr'
 import { useState } from 'react'
 import { Progress } from 'antd'
-export const MultiAccounts = () => {
+export const MultiAccounts = ({ onScanSuccess }) => {
 	const [accounts, setAccounts] = useState([])
 	const [isScanning, setIsScanning] = useState(false)
 	const [progress, setProgress] = useState(0)
@@ -26,10 +26,12 @@ export const MultiAccounts = () => {
 
 		// reset the progress
 		setProgress(0)
+
+		// call the onScanSuccess callback
+		onScanSuccess(multiAccounts)
 	}
 	const onError = (errorMessage) => {
 		console.log('error: ', errorMessage)
-		alert('error: ', errorMessage)
 		setIsScanning(false)
 
 		// reset the progress
@@ -82,7 +84,7 @@ export const MultiAccounts = () => {
 				</button>
 			)}
 
-			<pre> {JSON.stringify(accounts, undefined, 2)} </pre>
+			{/* <pre> {JSON.stringify(accounts, undefined, 2)} </pre> */}
 		</>
 	)
 }

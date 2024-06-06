@@ -1,0 +1,30 @@
+/* SignTx.css */
+.sign-tx-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .sign-tx-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+    text-align: center;
+  }
+  
+  .MuiTabs-root {
+    margin-bottom: 1.5rem;
+  }
+  
+  .MuiTab-root {
+    font-size: 1rem;
+    text-transform: none;
+    min-width: 100px;
+  }
+  
+  .MuiBox-root {
+    padding: 1.5rem;
+  }

@@ -129,28 +129,11 @@ const extractTransaction = (psbtHex) => {
 	return extractedTransaction.toHex()
 }
 
-export const Bitcoin = () => {
+export const Bitcoin = ({ masterFingerPrint }) => {
 	const [isScanning, setIsScanning] = useState(false)
 	const [signature, setSignature] = useState('')
 
-	const [masterFingerprint, setMasterFingerprint] = useState('d5950b24')
-	// input master fainger print component
-	const inputMasterFingerprint = () => {
-		return (
-			<div>
-				<label>Set your Master Fingerprint: </label>
-				<input
-					type="text"
-					value={masterFingerprint}
-					onChange={(e) => {
-						setMasterFingerprint(e.target.value.trim())
-					}}
-				/>
-			</div>
-		)
-	}
-
-	const psbtHex = generate_legacy_p2pkh_psbt_tx(masterFingerprint)
+	const psbtHex = generate_legacy_p2pkh_psbt_tx(masterFingerPrint)
 	console.log('psbtHex: ', psbtHex)
 	const keystoneSDK = new KeystoneSDK()
 	const ur = keystoneSDK.btc.generatePSBT(Buffer.from(psbtHex, 'hex'))
@@ -183,19 +166,19 @@ export const Bitcoin = () => {
 		/>
 	) : (
 		<>
-			{inputMasterFingerprint()}
-			<p> simple transfer psbt </p>
-			<AnimatedQRCode type={ur.type} cbor={ur.cbor.toString('hex')} />
-			<button
-				onClick={() => {
-					setIsScanning(true)
-				}}
-			>
-				Scan Keystone
-			</button>
+			<div className="flex flex-col  w-full h-full space-y-4">
+				<AnimatedQRCode type={ur.type} cbor={ur.cbor.toString('hex')} />
+				<button
+					onClick={() => {
+						setIsScanning(true)
+					}}
+				>
+					Scan Keystone
+				</button>
 
-			<p>signature: </p>
-			<p>{JSON.stringify(signature)}</p>
+				<p>signature: </p>
+				<p>{JSON.stringify(signature)}</p>
+			</div>
 		</>
 	)
 }
