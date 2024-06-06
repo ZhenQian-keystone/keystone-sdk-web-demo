@@ -9,3 +9,7 @@ yarn
 ```bash
 yarn start
 ```
+
+## note
+
+you should modify your MasterFingerPrint when you test this demo .
