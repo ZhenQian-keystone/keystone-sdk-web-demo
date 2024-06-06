@@ -4,7 +4,7 @@ import './Confetti.css'
 
 const Confetti = () => {
 	return (
-		<div className="confetti-container">
+		<div className="confetti-container visible">
 			<div className="confetti-left">
 				<div className="confetti"></div>
 				<div className="confetti"></div>
